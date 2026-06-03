@@ -1,1 +1,38 @@
-Hello world!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Nguyen - 12COMP Database Assessment - 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- firebase start ****************************************-->
+    <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+    <!-- firebase end ******************************************-->
+    <script src="fb_setup.js"></script>
+    <script src="fb_io.js"></script>
+</head>
+<body>
+
+    <form id="loginForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="favoriteFruit" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="fruitQuantity" required />
+
+      <!-- add more fields here -->
+    </form>
+
+    <button onclick="fb_write()">Submit</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
