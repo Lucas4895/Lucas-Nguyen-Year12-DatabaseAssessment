@@ -13,26 +13,30 @@
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
     <!-- firebase end ******************************************-->
-    <script src="fb_setup.js"></script>
-    <script src="fb_io.js"></script>
+
 </head>
 <body>
+    <div class="navbar">
+        <a href="" class="nav-item">Home</a>
+        <a href="https://hvhs-tech.github.io/programming-project-Lucas4895/" class="games">Our Games!</a>
+        <a href="" class="about">About Us</a>
+    </div>
 
     <form id="loginForm">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required />
 
       <label for="age">Age:</label>
-      <input type="text" id="age" name="favoriteFruit" required />
+      <input type="text" id="age" name="age" min="7" max="99" required />
 
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="fruitQuantity" required />
-
-      <!-- add more fields here -->
+      <input type="email" id="email" name="email" required />
     </form>
 
     <button onclick="fb_write()">Submit</button>
-
+    
+    <script src="fb_setup.js"></script>
+    <script src="fb_io.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
