@@ -19,8 +19,10 @@ const firebaseConfig = {
   appId: "1:691283081178:web:61c724a6e33d905fd7f2e3",
   measurementId: "G-JKFYTZL473"
 };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
   // This log prints the firebase object to the console to show that it is working.
   // As soon as you have the script working, delete this log.
