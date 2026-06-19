@@ -18,7 +18,7 @@ function fb_handleLogin(_user){
 }
 
 function fb_popupLogin(){
-var provider = new firebase.auth.GoogleAuthProvider();
+    var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider).then((result) => {
         //Use result.user to be safe, or let the listener handle it
