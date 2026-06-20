@@ -1,0 +1,67 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The main navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left, links to right */
+  align-items: center;            /* Centers items vertically */
+  background-color: #333;         /* Dark charcoal background */
+  padding: 1rem 2rem;             /* Spacing inside the navbar */
+  position: sticky;               /* Keeps the navbar at the top as you scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+/* The list container for links */
+.nav-links {
+  display: flex;
+  list-style: none;               /* Removes standard bullet points */
+}
+
+/* Individual list items */
+.nav-links li {
+  margin-left: 1.5rem;            /* Puts space between the links */
+}
+
+/* Styling the actual clickable links */
+.nav-links a {
+  color: #edf2f7;
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 1rem;
+  transition: color 0.3s ease;    /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #3182ce;                 /* Changes to a nice blue on hover */
+}
+
+.nav-links .login {
+  color: #edf2f7;
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 1rem;
+  transition: color 0.3s ease;    /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.nav-links .login:hover {
+  color: #3182ce;                 /* Changes to a nice blue on hover */
+}
+
+.nav-links .logout {
+  color: #edf2f7;
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 1rem;
+  transition: color 0.3s ease;    /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.nav-links .logout:hover {
+  color: #3182ce;                 /* Changes to a nice blue on hover */
+}

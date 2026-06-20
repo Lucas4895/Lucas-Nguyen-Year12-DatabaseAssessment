@@ -1,8 +1,6 @@
 var GLOBAL_user;
 var authenticationListener; //global variable to store the listener
 
-fb_authenticate()
-
 function fb_authenticate(){
     authenticationListener = firebase.auth().onAuthStateChanged(fb_handleLogin);
     // authenticate with Google

@@ -16,25 +16,17 @@
 
 </head>
 <body>
-    <div class="navbar">
-        <a href="" class="nav-item">Home</a>
-        <a href="https://hvhs-tech.github.io/programming-project-Lucas4895/" class="games">Our Games!</a>
-        <a href="" class="about">About Us</a>
-    </div>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="https://ominous-fortnight-5grp9qpqqvq52v7pq-5501.app.github.dev/#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Our Games!</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><div class="login" onclick="fb_authenticate()">Login</div></li>
+            <li><div class="logout" onclick="fb_logout()">Logout</div></li>
+        </ul>
+    </nav>
 
-    <form id="loginForm">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="age">Age:</label>
-      <input type="text" id="age" name="age" min="7" max="99" required />
-
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required />
-    </form>
-
-    <button onclick="fb_write()">Submit</button>
-    
     <script src="fb_setup.js"></script>
     <script src="fb_io.js"></script>
     <script src="script.js"></script>
