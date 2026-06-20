@@ -1,34 +1,42 @@
 var GLOBAL_user;
 var authenticationListener; //global variable to store the listener
+const loginBtn = document.querySelector(".login");
+const logoutBtn = document.querySelector(".logout");
+if (logoutBtn) logoutBtn.style.display = "none";
 
 function fb_authenticate(){
     authenticationListener = firebase.auth().onAuthStateChanged(fb_handleLogin);
-    // authenticate with Google
 }
 
 function fb_handleLogin(_user){
-    if (_user){
+    if (_user) {
         GLOBAL_user = _user;
-        console.log("User is logged in. ")
+        console.log("User is logged in:", _user.displayName);
+        if (loginBtn) loginBtn.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "block";
     } else {
-        fb_popupLogin();
+        GLOBAL_user = null;
+        console.log("No user session active.");
+        if (loginBtn) loginBtn.style.display = "block";   // Show login again
+        if (logoutBtn) logoutBtn.style.display = "none"; 
     }
 }
 
-function fb_popupLogin(){
+// authenticate with Google
+function fb_popupLogin(){ 
     var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider).then((result) => {
-        //Use result.user to be safe, or let the listener handle it
-        GLOBAL_user = result.user; 
         console.log("User has logged in via popup.");
     }).catch((error) => {
         console.error("Popup login failed:", error);
     });
-};
+}
 
 function fb_logout(){
-    authenticationListener(); //this line turns off the listener
     firebase.auth().signOut();
-    console.log("logged out")
-};
+    console.log("logged out");
+}
+
+// Start everything up on page load
+fb_authenticate();
