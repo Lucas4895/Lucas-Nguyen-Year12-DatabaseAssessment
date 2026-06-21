@@ -14,6 +14,7 @@ function fb_handleLogin(_user){
         console.log("User is logged in:", _user.displayName);
         if (loginBtn) loginBtn.style.display = "none";
         if (logoutBtn) logoutBtn.style.display = "block";
+        fb_write()
     } else {
         GLOBAL_user = null;
         console.log("No user session active.");
