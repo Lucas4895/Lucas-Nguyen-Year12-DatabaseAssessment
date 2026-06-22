@@ -24,9 +24,9 @@ function fb_handleLogin(_user){
     } else {
         GLOBAL_user = null;
         console.log("No user session active.");
-        if (loginBtn) loginBtn.style.display = "block";   // Show login again
-        if (logoutBtn) logoutBtn.style.display = "none"; 
-        if (geoDashBtn) geoDashBtn.style.display = "none"; 
+        if (LOGINBTN) LOGINBTN.style.display = "block";   // Show login again
+        if (LOGOUTBTN) LOGOUTBTN.style.display = "none"; 
+        if (GEODASH) GEODASH.style.display = "none"; 
         if (CATCARROT) CATCARROT.style.display = "none"; 
         alert("Please Log in to play our games.")
     }

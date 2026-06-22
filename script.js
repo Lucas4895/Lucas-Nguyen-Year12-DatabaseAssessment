@@ -17,17 +17,19 @@ function fb_write(){
     console.log("Data Saved")
 }
 
+function fb_writeScore() {
+    if (!GLOBAL_user) {
+        console.log("No logged-in user found. Score not saved to database.");
+        return; 
+    }
 
-//fb_read
-function fb_read(){
-    console.log("Reading...")
-    firebase.database().ref("/").once("value", displayResult)
-}
+    const uid = GLOBAL_user.uid;
 
-function showScores(child) {
+    // Save the current score value directly under their UID inside a "scores" folder
+    firebase.database().ref("/scores/" + uid).set({
+        score: score,
+        username: GLOBAL_user.displayName
+    });
 
-}
-
-function displayResult(snapshot) {
-    snapshot.forEach(showScores)
+    console.log("Score of " + score + " saved to Firebase for user " + uid);
 }

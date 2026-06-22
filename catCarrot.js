@@ -233,6 +233,7 @@ function drawGameplayScreen() {
 let lastFire = 0
 let lastSpawn = 0
 function playerHit() {
+    fb_writeScore();
     gameState = 'gameover'
 }
 
@@ -331,6 +332,7 @@ function draw() {
     timeoutBox.text = "You escaped the bunny! You've collected " + score + " cans of tuna!! Click anywhere to restart"
 
     if (timeLeft <= 0) {
+       fb_writeScore();
        gameState = 'timeout'
     }
 
