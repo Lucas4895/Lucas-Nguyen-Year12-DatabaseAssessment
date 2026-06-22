@@ -1,7 +1,6 @@
 function fb_write(){
     // Check if the GLOBAL_user variable actually has data yet
     if (!GLOBAL_user) {
-        alert("Please wait a moment or log in before submitting!");
         return; // Stops the function from running
     }
 
@@ -16,4 +15,19 @@ function fb_write(){
     });
 
     console.log("Data Saved")
+}
+
+
+//fb_read
+function fb_read(){
+    console.log("Reading...")
+    firebase.database().ref("/").once("value", displayResult)
+}
+
+function showScores(child) {
+
+}
+
+function displayResult(snapshot) {
+    snapshot.forEach(showScores)
 }

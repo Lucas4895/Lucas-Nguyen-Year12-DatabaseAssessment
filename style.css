@@ -26,7 +26,7 @@
 
 /* Individual list items */
 .nav-links li {
-  margin-left: 1.5rem;            /* Puts space between the links */
+  margin-left: 1.5rem;        
 }
 
 /* Styling the actual clickable links */
@@ -63,5 +63,29 @@
 
 /* Hover effect for links */
 .nav-links .logout:hover {
+  color: #3182ce;                 /* Changes to a nice blue on hover */
+}
+
+.nav-links .CatCarrot {
+  color: #edf2f7;
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 1rem;
+  transition: color 0.3s ease;    /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.nav-links .CatCarrot:hover {
+  color: #3182ce;                 /* Changes to a nice blue on hover */
+}
+
+.nav-links .GeoDash {
+  color: #edf2f7;
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 1rem;
+  transition: color 0.3s ease;    /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.nav-links .GeoDash:hover {
   color: #3182ce;                 /* Changes to a nice blue on hover */
 }
