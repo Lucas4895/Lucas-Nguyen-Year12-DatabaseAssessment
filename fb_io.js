@@ -8,6 +8,8 @@ if (LOGOUTBTN) LOGOUTBTN.style.display = "none";
 if (GEODASH) GEODASH.style.display = "none";
 if (CATCARROT) CATCARROT.style.display = "none";
 
+alert("Please wait a moment...")
+
 function fb_authenticate(){
     authenticationListener = firebase.auth().onAuthStateChanged(fb_handleLogin);
 }

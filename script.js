@@ -17,7 +17,11 @@ function fb_write(){
     console.log("Data Saved")
 }
 
-function fb_writeScore() {
+
+/****************************************************************************/
+//write functions
+/***************************************************************************/
+function fb_writeScore() {  //catCarrot's write function
     if (!GLOBAL_user) {
         console.log("No logged-in user found. Score not saved to database.");
         return; 
@@ -26,10 +30,30 @@ function fb_writeScore() {
     const uid = GLOBAL_user.uid;
 
     // Save the current score value directly under their UID inside a "scores" folder
-    firebase.database().ref("/scores/" + uid).set({
+    firebase.database().ref("/catCarrot/" + uid).set({
         score: score,
         username: GLOBAL_user.displayName
     });
 
     console.log("Score of " + score + " saved to Firebase for user " + uid);
 }
+
+function fb_writeScore2() { //GeoDash's write function
+    if (!GLOBAL_user) {
+        console.log("No logged-in user found. Score not saved to database.");
+        return; 
+    }
+
+    const uid = GLOBAL_user.uid;
+
+    // Save the current score value directly under their UID inside a "scores" folder
+    firebase.database().ref("/geoDash/" + uid).set({
+        score: score,
+        username: GLOBAL_user.displayName
+    });
+
+    console.log("Score of " + score + " saved to Firebase for user " + uid);
+}
+/****************************************************************************/
+//write functions end
+/***************************************************************************/

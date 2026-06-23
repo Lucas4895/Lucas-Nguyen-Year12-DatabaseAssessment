@@ -164,6 +164,7 @@ function endScreen(){
     text("your score was: "+score, 50, 110);
     textSize(14);
     text("press any key to restart", 50, 150);
+    fb_writeScore2();
 }
 
 function resetGame(){
