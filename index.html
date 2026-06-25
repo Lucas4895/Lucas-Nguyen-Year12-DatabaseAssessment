@@ -26,7 +26,11 @@
         </ul>
     </nav>
 
-    <div id="leaderboard"></div>
+    <div class="leaderboard-container">
+        <h2>Cat & Carrot Top Scores</h2>
+        <ol id="leaderboard-list"></ol>
+        <button onclick="fb_readLeaderboard()">Refresh Leaderboard</button>
+    </div>
 
     <script src="fb_setup.js"></script>
     <script src="fb_io.js"></script>

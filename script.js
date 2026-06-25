@@ -57,3 +57,37 @@ function fb_writeScore2() { //GeoDash's write function
 /****************************************************************************/
 //write functions end
 /***************************************************************************/
+
+function fb_readLeaderboard() {
+    console.log("Fetching leaderboard...");
+    
+    firebase.database()
+        .ref("/catCarrot")
+        .orderByChild("score")
+        .once("value", displayLeaderboard);
+}
+
+function displayLeaderboard(snapshot) {
+    const listElement = document.getElementById("leaderboard-list");
+    
+    // Clear out any old scores inside the list so we don't accidentally duplicate them
+    listElement.innerHTML = "";
+    let scoreboardArray = [];
+
+    snapshot.forEach(function(child) {
+        const data = child.val();
+        scoreboardArray.push({
+            username: data.username,
+            score: data.score
+        });
+    });
+
+    scoreboardArray.reverse();
+
+    // Now loop through sorted array and create HTML list items <li>
+    scoreboardArray.forEach(function(player) {
+        const listItem = document.createElement("li");
+        listItem.textContent = player.username + " — " + player.score + " points";
+        listElement.appendChild(listItem);
+    });
+}
