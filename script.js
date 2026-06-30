@@ -20,7 +20,7 @@ function fb_write(){
 }
 
 function fb_writeScore() {  //catCarrot's write function
-    if (!GLOBAL_user) {
+    if (!GLOBAL_user) {  //Because the link aren't going to be hidden instantly, so this is just in case
         console.log("No logged-in user found. Score not saved to database.");
         return; 
     }
@@ -62,6 +62,7 @@ function fb_readLeaderboard() {
     firebase.database()
         .ref("/catCarrot")
         .orderByChild("score")
+        .limitToFirst(10)
         .once("value", displayLeaderboard);
 }
 
@@ -99,6 +100,7 @@ function fb_readLeaderboard2() {
     firebase.database()
         .ref("/geoDash")
         .orderByChild("score")
+        .limitToFirst(10)
         .once("value", displayLeaderboard2);
 }
 

@@ -23,6 +23,7 @@ function fb_handleLogin(_user){
         if (GEODASH) GEODASH.style.display = "block";
         if (CATCARROT) CATCARROT.style.display = "block";
         fb_write()
+        alert("Logged in as " + _user.displayName)
     } else {
         GLOBAL_user = null;
         console.log("No user session active.");
